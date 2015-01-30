@@ -1,0 +1,5 @@
+
+Open Ten Fingers https://github.com/x2nie/open10fingers
+GNU Typist http://www.gnu.org/software/gtypist/
+Klavaro http://sourceforge.net/projects/klavaro
+GNU Typing Trainer http://sourceforge.net/projects/gtpgt
