@@ -2,8 +2,9 @@
  
 <head>
 <style type="text/css">
-	svg path.down,
-	.down {background-color:red; fill:#f6f;} 
+	svg path.down {background-color:red; fill:#f6f;} 
+	div.key.down,
+	.down {background-color:red} 
 	#keyboard-layout div {display: inline; border:1px solid gray;}
 	 #kbd_tilde {
             //fill: yellow;
@@ -18,18 +19,18 @@
  
 <body>
  
- <svg class="icon" viewBox="0 0 32 32" width="64" height="64">
+ <!--svg class="icon" viewBox="0 0 32 32" width="64" height="64">
 	<use xlink:href="img/sprites.svg#icon-home"></use>
-</svg>
+</svg -->
  
 <div id="keyboard-layout">
 	<div id="kbd_a">a</div>
 	<div id="kbd_s">s</div>
 	<div id="kbd_b">b</div>
  </div>
-  <svg class="icon" viewBox="0 0 1500 1500" >
-	<use xlink:href="img/akeyboard-layout.svg#svg2"></use>
-  </svg>
+  <!-- svg class="icon" viewBox="0 0 1500 1500" >
+	<use xlink:href="img/keyboard-layout-a.svg#svg2"></use>
+  </svg -->
  <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -39,7 +40,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1052.3622"
-   height="744.09448"
+   height="400.09448"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -601,39 +602,49 @@
   </g>
 </svg>
 
+<div id="custom_kbd">Y</div>
 
 <!--script src="js/jquery-1.11.2.min.js"></script0--> 
 <script src="js/jquery.js"></script> 
+<script src="themes/default/layout-builder.js"></script> 
+<style type="text/css" src="themes/default/style.css" ></style>
+<link href="themes/default/style.css" rel="stylesheet" type="text/css"/>
+
 <script>
  
 $(document).ready(function(){
+$('#custom_kbd').html( keyboardLayout() );
 	var kbd = [];
-	kbd[16] = $("#kbd_tilde");
+	kbd[16] = $("#tut_3_0");
 	//kbd[17] = $("#icon-home");	
-	//kbd[65] = $("#kbd_a");
-	//kbd[66] = $("#kbd_b");
-	//kbd[83] = $("#kbd_s");
+	kbd[65] = $("#tut_2_1");
+	kbd[66] = $("#kbd_b");
+	kbd[83] = $("#tut_2_2");
 	
   $("body").keyup(function(){ 
     //alert("keyup event occured! The Ascii value of pressed key is: " + event.keyCode);
 	document.title = event.keyCode;
 	kbd[event.keyCode].removeClass('down');
-	kbd[event.keyCode].attr("class", "nocry") ;
+	//kbd[event.keyCode].attr("class", "nocry") ;
 	document.title = kbd[event.keyCode].attr("class") + "up!";
   });
   
   $("body").keydown(function(){ 
-	kbd[16] = $("#kbd_tilde");
-	kbd[17] = $("#icon-home");	
+	//kbd[16] = $("#kbd_tilde0");
+	//kbd[17] = $("#icon-home");	
 	
-	//kbd[event.keyCode].addClass('down');
-	kbd[event.keyCode].attr("class", "down") ;
+	kbd[event.keyCode].addClass('down');
+	//kbd[event.keyCode].attr("class", "down") ;
 	document.title = kbd[event.keyCode].attr("class");
   });
-	document.title = 'Len = ' +  kbd.length; 
-	$("#kbd_tilde").innerHTML = '~';
+	//document.title = 'Len = ' +  kbd.length; 
+	//$("#kbd_tilde").innerHTML = '~';
+	
+  
+  
 });
- 
+
+
 </script>
 </body>
  

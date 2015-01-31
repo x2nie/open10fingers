@@ -1,0 +1,26 @@
+.row {display:block; background-color: #666;}
+.key {
+	display:inline-block; 
+	width:33px; height:34px;
+	margin:0 5px 5px 0;
+	background-color:#888;
+	border: 1 px solid lime;
+	border-radius: 5px;
+	font-family: arial, helvetica;
+	overflow: hidden;
+	}
+.key span {
+	padding:7px;
+	margin:0; 
+	//background-color: blue;
+	}	
+.tab { width:52px;}
+.capslock { width:59px;}
+.shift-left { width:81px;}
+.shift-right { width:101px;}
+.ctrl { width:59px;}
+.enter { width:52px;}
+.bkspace { width:71px;}
+.alt { width:40px;}
+.bkspace { width:71px;}
+.space { width:230px;}
