@@ -16,6 +16,24 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="Keyboard-Layout-A.svg"
    style="display:inline">
+  <style type="text/css" media="screen">  
+    <![CDATA[  
+    #internal rect {  
+        fill: slategrey;  
+        stroke: black;  
+        stroke-width: 3;  
+        -webkit-transition: all 350ms;  
+    }  
+    #internal rect:hover {  
+        fill: green;  
+    }  	
+	.down {fill:blue;} 
+	#keyboard-layout div {display: inline; border:1px solid gray;}
+	 #kbd_tilde {
+            fill: yellow;
+        }
+    ]]>  
+</style>  
   <defs
      id="defs23822" />
   <sodipodi:namedview
@@ -511,7 +529,7 @@
        id="path21634"
        inkscape:connector-curvature="0" />
     <path
-       style="fill-opacity:1;fill-rule:nonzero;stroke:none;"
+       style="fill:lime;fill-opacity:1;fill-rule:nonzero;stroke:none;"
        class="down"
        d="m 60.804492,117.81309 25.178186,0 c 1.992674,0 3.596884,1.64207 3.596884,3.68178 l 0,25.77253 c 0,2.03971 -1.60421,3.68179 -3.596884,3.68179 l -25.178186,0 c -1.992674,0 -3.596884,-1.64208 -3.596884,-3.68179 l 0,-25.77253 c 0,-2.03971 1.60421,-3.68178 3.596884,-3.68178 z"
        id="kbd_tilde"
