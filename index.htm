@@ -1,0 +1,47 @@
+<html>
+ 
+<head>
+<style type="text/css">
+	.down {background-color:red;} 
+	#keyboard-layout div {display: inline; border:1px solid gray;}
+</style>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
+<script src="js/jquery.js"></script>
+ 
+
+ 
+</head>
+ 
+<body>
+ 
+
+<div id="keyboard-layout">
+	<div id="kbd_a">a</div>
+	<div id="kbd_s">s</div>
+	<div id="kbd_b">b</div>
+ </div>
+ 
+ <script>
+ 
+$(document).ready(function(){
+	var kbd = [];
+	kbd[65] = $("#kbd_a");
+	kbd[66] = $("#kbd_b");
+	kbd[83] = $("#kbd_s");
+  $("body").keyup(function(){ 
+    //alert("keyup event occured! The Ascii value of pressed key is: " + event.keyCode);
+	document.title = event.keyCode;
+	kbd[event.keyCode].removeClass('down');
+  });
+  
+  $("body").keydown(function(){ 
+	document.title = event.keyCode;
+	kbd[event.keyCode].addClass('down');
+  });
+	document.title = 'Len = ' +  kbd.length; 
+});
+ 
+</script>
+</body>
+ 
+</html>
