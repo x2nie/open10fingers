@@ -2,11 +2,14 @@
  
 <head>
 <style type="text/css">
-	.down {background-color:red;} 
+	.down {background-color:red;fill:#f6f;} 
 	#keyboard-layout div {display: inline; border:1px solid gray;}
+	 #kbd_tilde {
+            fill: yellow;
+        }
 </style>
 <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
-<script src="js/jquery.js"></script>
+
  
 
  
@@ -20,14 +23,18 @@
 	<div id="kbd_s">s</div>
 	<div id="kbd_b">b</div>
  </div>
- 
- <script>
+ <img src="img/keyboard-layout-a.svg" />
+
+<script src="js/jquery.js"></script> 
+<script>
  
 $(document).ready(function(){
 	var kbd = [];
+	kbd[16] = $("#kbd_shift_left");
 	kbd[65] = $("#kbd_a");
 	kbd[66] = $("#kbd_b");
 	kbd[83] = $("#kbd_s");
+	
   $("body").keyup(function(){ 
     //alert("keyup event occured! The Ascii value of pressed key is: " + event.keyCode);
 	document.title = event.keyCode;
