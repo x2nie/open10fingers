@@ -7,6 +7,9 @@
 .row {display:block; 
 	padding:3px;
 	}
+	
+.down , div.key.down {
+	background-color:#AAA;}
 .key {
 	display:inline-block; 
 	width:33px; height:31px;
