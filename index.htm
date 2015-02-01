@@ -36,7 +36,7 @@
 
 <!--script src="js/jquery-1.11.2.min.js"></script0--> 
 <script src="js/jquery.js"></script> 
-<script src="js/jquery-ui.min.js"></script> 
+<!--script src="js/jquery-ui.min.js"></script--> 
 
 
 <script src="themes/default/layout-builder.js"></script> 
@@ -53,6 +53,11 @@ $(document).ready(function(){
 	kbd[65] = $("#tut_2_1");
 	kbd[66] = $("#kbd_b");
 	kbd[83] = $("#tut_2_2");
+	
+	for (i = 0; i < kbd.length; i++) { 
+		if(kbd[i])
+			kbd[i].addClass('allowed');
+	}
 	
 	$("body").keyup(function(){ 
     //alert("keyup event occured! The Ascii value of pressed key is: " + event.keyCode);
