@@ -18,11 +18,11 @@ function keyboardLayout()
 {
 
 	//return '<h1>keyboardLayout</h1>';
-	var clases = '|tab|capslock|shift-left|shift-right|ctrl|enter|alt|space'.split('|');
+	var clases = '|tab|capslock|shift-left|shift-right|ctrl|enter|alt|space|vbar'.split('|');
 	var lay =  [[0,0,0,0,0,0,0,0,0,0,0,0,0,3],
-				[1,0,0,0,0,0,0,0,0,0,0,0,0,6],
-				[2,0,0,0,0,0,0,0,0,0,0,0,0,3],
-				[3,0,0,0,0,0,0,0,0,0,0,0,4],
+				[1,0,0,0,0,0,0,0,0,0,0,0,0,9],
+				[2,0,0,0,0,0,0,0,0,0,0,0,6],
+				[3,0,0,0,0,0,0,0,0,0,0,4],
 				[5,7,7,8,7,7,7,5]];
 				
 	text = '';

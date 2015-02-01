@@ -1,12 +1,16 @@
-.row {display:block; background-color: #666;}
+.row {display:block; 
+	background-color: #666;
+	padding:3px;
+	}
 .key {
 	display:inline-block; 
-	width:33px; height:34px;
-	margin:0 5px 5px 0;
+	width:33px; height:31px;
+	margin-right:5px;
 	background-color:#888;
 	border: 1 px solid lime;
 	border-radius: 5px;
 	font-family: arial, helvetica;
+	font-size:10px;
 	overflow: hidden;
 	}
 .key span {
@@ -15,12 +19,13 @@
 	//background-color: blue;
 	}	
 .tab { width:52px;}
-.capslock { width:59px;}
-.shift-left { width:81px;}
-.shift-right { width:101px;}
+.capslock { width:67px;}
+.shift-left { width:85px;}
+.shift-right { width:108px;}
 .ctrl { width:59px;}
-.enter { width:52px;}
+.enter { width:88px;}
 .bkspace { width:71px;}
-.alt { width:40px;}
+.alt { width:43px;}
 .bkspace { width:71px;}
-.space { width:230px;}
+.space { width:210px;}
+.vbar { width:65px;}
