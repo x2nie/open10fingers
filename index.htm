@@ -3,13 +3,12 @@
 <head>
 <style type="text/css">
 	svg path.down {background-color:red; fill:#f6f;} 
-	div.key.down,
-	.down {background-color:red} 
+	
 	#keyboard-layout div {display: inline; border:1px solid gray;}
 	 #kbd_tilde {
             //fill: yellow;
         }
-	#custom_kbd {margin-left:40px;}
+	#custom_kbd {margin-left:40px; display:none;}
 </style>
 <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
 
@@ -37,6 +36,9 @@
 
 <!--script src="js/jquery-1.11.2.min.js"></script0--> 
 <script src="js/jquery.js"></script> 
+<script src="js/jquery-ui.min.js"></script> 
+
+
 <script src="themes/default/layout-builder.js"></script> 
 <style type="text/css" src="themes/default/style.css" ></style>
 <link href="themes/default/style.css" rel="stylesheet" type="text/css"/>
@@ -44,7 +46,7 @@
 <script>
  
 $(document).ready(function(){
-$('#custom_kbd').html( keyboardLayout() );
+	$('#custom_kbd').html( keyboardLayout() ).fadeIn( "slow" );
 	var kbd = [];
 	kbd[16] = $("#tut_3_0");
 	//kbd[17] = $("#icon-home");	
@@ -52,22 +54,39 @@ $('#custom_kbd').html( keyboardLayout() );
 	kbd[66] = $("#kbd_b");
 	kbd[83] = $("#tut_2_2");
 	
-  $("body").keyup(function(){ 
+	$("body").keyup(function(){ 
     //alert("keyup event occured! The Ascii value of pressed key is: " + event.keyCode);
-	document.title = event.keyCode;
-	kbd[event.keyCode].removeClass('down');
+	//document.title = event.keyCode;
+		kbd[event.keyCode].stop().removeClass('down',100,
+			function(){$(this).removeAttr('style'); }
+			);
+		//kbd[event.keyCode].stop().removeClass('down',400, 'easeInCubic');
+		/*kbd[event.keyCode].fadeOut("slow", function() {
+			$(this).removeClass("down");
+		});*/
 	//kbd[event.keyCode].attr("class", "nocry") ;
-	document.title = kbd[event.keyCode].attr("class") + "up!";
-  });
+	//document.title = kbd[event.keyCode].attr("class") + "up!";
+	});
   
-  $("body").keydown(function(){ 
+	$("body").keydown(function(){ 
 	//kbd[16] = $("#kbd_tilde0");
 	//kbd[17] = $("#icon-home");	
-	
-	kbd[event.keyCode].addClass('down');
+		kbd[event.keyCode].stop().addClass('down',100, 
+			function(){$(this).removeAttr('style'); }
+			);
+		 /*kbd[event.keyCode].stop().hide().fadeIn('slow',function(){
+                //$(this).removeClass('hide-info');
+                $(this).addClass('down');
+		});*/
+		//kbd[event.keyCode].stop().addClass('down',400,'easeInCubic');
+		//kbd[event.keyCode].stop(true,true).addClass('down',1000);//,'easeOutQuad', function(){});
+		//$(kbd[event.keyCode]).stop().animate({ backgroundColor: "#a7bf51"}, 800);
+		/*kbd[event.keyCode].animate({
+          backgroundColor: '#ab0', width:100
+        }, 1000 );*/
 	//kbd[event.keyCode].attr("class", "down") ;
-	document.title = kbd[event.keyCode].attr("class");
-  });
+	//document.title = kbd[event.keyCode].attr("class");
+	});
 	//document.title = 'Len = ' +  kbd.length; 
 	//$("#kbd_tilde").innerHTML = '~';
 	
