@@ -24,23 +24,25 @@ function keyboardLayout()
 				[2,0,0,0,0,0,0,0,0,0,0,0,6],
 				[3,0,0,0,0,0,0,0,0,0,0,4],
 				[5,7,7,8,7,7,7,5]];
-				
+ 
 	text = '';
 	for (i = 0; i < lay.length; i++) { 
 		row ='';
 		for (j = 0; j < lay[i].length; j++) { 
-			row += buildHTML('div', '<span>X</span>', {
+			row += buildHTML('div', '<span>A</span>', {
 				id : "tut_" + i + "_" + j,
 				class : 'key ' + clases[ lay[i][j] ]
 			});
 		}
-		
-		text += buildHTML('span', row, {
+ 
+ text += buildHTML('span', row, {
 				class : 'row'
 			});
 		
 	}
-	return text;
+	return buildHTML('div', text, {
+				class : 'keyboard-frame'
+			});
 } 
 
 /* 

@@ -1,5 +1,10 @@
-.row {display:block; 
+.keyboard-frame {
+	padding: 28px 10px;
 	background-color: #666;
+	border-radius: 5px;
+	display:inline-block; 
+	}
+.row {display:block; 
 	padding:3px;
 	}
 .key {
@@ -14,9 +19,9 @@
 	overflow: hidden;
 	}
 .key span {
-	padding:7px;
+	padding:10px 7px;
 	margin:0; 
-	//background-color: blue;
+	line-height:20px;
 	}	
 .tab { width:52px;}
 .capslock { width:67px;}
