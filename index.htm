@@ -32,7 +32,8 @@
 	<use xlink:href="img/keyboard-layout-a.svg#svg2"></use>
   </svg -->
  
-<div id="custom_kbd">Y</div>
+ <h2>Last Char: <span id="last-charPressed"></span> | Key: <span id="last-keyPressed"></span></h2>
+<div id="custom_kbd"></div>
 
 <!--script src="js/jquery-1.11.2.min.js"></script0--> 
 <script src="js/jquery.js"></script> 
@@ -46,23 +47,71 @@
 <script>
  
 $(document).ready(function(){
-	$('#custom_kbd').html( keyboardLayout() ).fadeIn( "slow" );
+	$('#custom_kbd').html( keyboardLayout() );
+	var kbd_keys = {
+    'name': "US Standard", 'keys': [
+      [["`", "~"], ["1", "!"], ["2", "@"], ["3", "#"], ["4", "$"], ["5", "%"], ["6", "^"], ["7", "&"], ["8", "*"], ["9", "("], ["0", ")"], ["-", "_"], ["=", "+"], ["Bksp", "Bksp"]],
+      [["Tab", "Tab"], ["q", "Q"], ["w", "W"], ["e", "E"], ["r", "R"], ["t", "T"], ["y", "Y"], ["u", "U"], ["i", "I"], ["o", "O"], ["p", "P"], ["[", "{"], ["]", "}"], ["\\", "|"]],
+      [["Caps", "Caps"], ["a", "A"], ["s", "S"], ["d", "D"], ["f", "F"], ["g", "G"], ["h", "H"], ["j", "J"], ["k", "K"], ["l", "L"], [";", ":"], ["'", '"'], ["Enter", "Enter"]],
+      [["Shift", "Shift"], ["z", "Z"], ["x", "X"], ["c", "C"], ["v", "V"], ["b", "B"], ["n", "N"], ["m", "M"], [",", "<"], [".", ">"], ["/", "?"], ["Shift", "Shift"]],
+      [[" ", " "]]
+    ], 'lang': ["en-us"] };
+	
+	for (i = 0; i < kbd_keys['keys'].length; i++) { 
+		row ='';
+		for (j = 0; j < kbd_keys['keys'][i].length; j++) {
+			$('#tut_'+i+'_'+j+' span').html(kbd_keys['keys'][i][j][0]);
+		}
+	}
+	$('#custom_kbd').fadeIn( "slow" );
+
 	var kbd = [];
-	kbd[16] = $("#tut_3_0");
+	
+	kbd[16] = [];
+	kbd[16][1] = $("#tut_3_0");
+	kbd[16][2] = $("#tut_3_11");
+	
 	//kbd[17] = $("#icon-home");	
 	kbd[65] = $("#tut_2_1");
 	kbd[66] = $("#kbd_b");
 	kbd[83] = $("#tut_2_2");
 	
 	for (i = 0; i < kbd.length; i++) { 
-		if(kbd[i])
-			kbd[i].addClass('allowed');
+		if(kbd[i]) {
+			if(kbd[i].constructor === Array) 
+			for (j = 0; j < kbd[i].length; j++) {
+				if(kbd[i][j]) kbd[i][j].addClass('allowed');
+			}
+			else
+				kbd[i].addClass('allowed');
+		}
 	}
+	$("body").keypress(function(){ 
+		$('#last-charPressed').html(event.which || event.keyCode);
+	});
 	
 	$("body").keyup(function(){ 
     //alert("keyup event occured! The Ascii value of pressed key is: " + event.keyCode);
 	//document.title = event.keyCode;
-		kbd[event.keyCode].stop().removeClass('down',100,
+		$('#last-keyPressed').html('{up} '+event.keyCode +' ~ '+ event.location );
+	
+		var c = k = kbd[event.keyCode];
+		
+		if(k && k.constructor === Array)
+			k = k[event.location];
+		
+		
+		if(typeof k === "undefined") {
+			
+			for (i = 0; i < c.length; i++) { 
+				k = c[i];
+				document.title = c[i];
+				if(typeof k !== "undefined" && k.hasClass('down')) {
+					break;
+				}
+			}
+		}
+		k.stop().removeClass('down',100,
 			function(){$(this).removeAttr('style'); }
 			);
 		//kbd[event.keyCode].stop().removeClass('down',400, 'easeInCubic');
@@ -72,11 +121,18 @@ $(document).ready(function(){
 	//kbd[event.keyCode].attr("class", "nocry") ;
 	//document.title = kbd[event.keyCode].attr("class") + "up!";
 	});
-  
+	
 	$("body").keydown(function(){ 
+		//event.preventDefault();
+		$('#last-keyPressed').html('{down} '+event.keyCode +' ~ '+ event.location );
 	//kbd[16] = $("#kbd_tilde0");
 	//kbd[17] = $("#icon-home");	
-		kbd[event.keyCode].stop().addClass('down',100, 
+		var k = kbd[event.keyCode];
+		
+		if(k.constructor === Array)
+			k = k[event.location];
+			
+		k.stop().addClass('down',100, 
 			function(){$(this).removeAttr('style'); }
 			);
 		 /*kbd[event.keyCode].stop().hide().fadeIn('slow',function(){

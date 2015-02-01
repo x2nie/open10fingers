@@ -35,8 +35,8 @@ function keyboardLayout()
 			});
 		}
  
- text += buildHTML('span', row, {
-				class : 'row'
+		text += buildHTML('span', row, {
+				class : 'row' +' row ' +i
 			});
 		
 	}

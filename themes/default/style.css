@@ -1,9 +1,11 @@
 .keyboard-frame {
 	padding: 28px 10px;
 	background-color: #666;
-	border-radius: 5px;
+	border-radius: 10px;
 	display:inline-block; 
-	background-image: linear-gradient(bottom, #666 0%, #444 100%);
+	background:-webkit-linear-gradient(top,#777 0%, #666 90%, #333 100%);
+	/*background:linear-gradient(top,#5D85A3 50%, #162B3B 50%, #388FD3 100%);
+	background: linear-gradient(bottom, #333 0%, #777 100%);
 	background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
 	background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
@@ -15,42 +17,46 @@
 	color-stop(0, #333),
 	color-stop(0.1, #666),	
 	color-stop(1, #777)
-	);
-	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	box-shadow: inset 0px 1px 0px #AAA, 0px 2px 0px 0px #222, 0px 5px 5px #222;	
+	);*/
+	box-shadow: inset 0px 0px 1px #999, 0px 2px 0px 0px #222, 0px 3px 3px #222;	
 
 	}
 .row {display:block; 
 	padding:5px;
 	}
 	
-.down , div.key.down {
-	background-color:#EEE;}
+
 .key {
 	display:inline-block; 
 	width:33px; height:31px;
 	margin-right:5px;
 	background-color:#888;
+	color: #555;
 	border: 1 px solid lime;
 	border-radius: 5px;
 	font-family: arial, helvetica;
 	font-size:10px;
 	overflow: hidden;
 	}
-.allowed {	
-	background-color: #AAA;
-	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	box-shadow: inset 0px 1px 0px #ddd, 0px 5px 0px 0px #555, 0px 10px 5px #222;	
-	}
 .key span {
 	padding:10px 7px;
 	margin:0; 
 	line-height:20px;
 	}	
+	
+/** states **/	
+.down , div.key.down {
+	background-color:#EEE;
+	box-shadow:0px 0px 4px #bbb;
+	}
+.allowed {	
+	background-color: #AAA;
+	color:#222;
+	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #555, 2px 5px 5px #222;	
+	}
 .tab { width:52px;}
 .capslock { width:67px;}
 .shift-left { width:85px;}
