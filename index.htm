@@ -1,6 +1,9 @@
 <html>
  
 <head>
+	<meta name="description" content="Description here">
+    <meta name="keywords" content="keywords here">
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
 <style type="text/css">
 	svg path.down {background-color:red; fill:#f6f;} 
 	
@@ -32,7 +35,7 @@
 	<use xlink:href="img/keyboard-layout-a.svg#svg2"></use>
   </svg -->
  
- <h2>Last Char: <span id="last-charPressed"></span> | Key: <span id="last-keyPressed"></span></h2>
+<h2>Last Char: <span id="last-charPressed"></span> | Key: <span id="last-keyPressed"></span></h2>
 <div id="custom_kbd"></div>
 
 <!--script src="js/jquery-1.11.2.min.js"></script0--> 
@@ -41,8 +44,7 @@
 
 
 <script src="themes/default/layout-builder.js"></script> 
-<style type="text/css" src="themes/default/style.css" ></style>
-<link href="themes/default/style.css" rel="stylesheet" type="text/css"/>
+<link  href="themes/default/style.css" rel="stylesheet" type="text/css"/>
 
 <script>
  
@@ -54,7 +56,7 @@ $(document).ready(function(){
       [["Tab", "Tab"], ["q", "Q"], ["w", "W"], ["e", "E"], ["r", "R"], ["t", "T"], ["y", "Y"], ["u", "U"], ["i", "I"], ["o", "O"], ["p", "P"], ["[", "{"], ["]", "}"], ["\\", "|"]],
       [["Caps", "Caps"], ["a", "A"], ["s", "S"], ["d", "D"], ["f", "F"], ["g", "G"], ["h", "H"], ["j", "J"], ["k", "K"], ["l", "L"], [";", ":"], ["'", '"'], ["Enter", "Enter"]],
       [["Shift", "Shift"], ["z", "Z"], ["x", "X"], ["c", "C"], ["v", "V"], ["b", "B"], ["n", "N"], ["m", "M"], [",", "<"], [".", ">"], ["/", "?"], ["Shift", "Shift"]],
-      [[" ", " "]]
+      [["Ctrl", "Ctrl"], ["", ""], ["Alt", "Alt"], ["Spacebar", ""], ["Alt", "Alt"], ["", ""],["", ""], ["Ctrl", "Ctrl"]]      
     ], 'lang': ["en-us"] };
 	
 	for (i = 0; i < kbd_keys['keys'].length; i++) { 
@@ -71,10 +73,20 @@ $(document).ready(function(){
 	kbd[16][1] = $("#tut_3_0");
 	kbd[16][2] = $("#tut_3_11");
 	
+	kbd[32] = $("#tut_4_3");
+	
 	//kbd[17] = $("#icon-home");	
 	kbd[65] = $("#tut_2_1");
-	kbd[66] = $("#kbd_b");
 	kbd[83] = $("#tut_2_2");
+	kbd[68] = $("#tut_2_3");
+	kbd[70] = $("#tut_2_4");
+	
+	kbd[74] = $("#tut_2_7");	
+	kbd[75] = $("#tut_2_8");	
+	kbd[76] = $("#tut_2_9");	
+	kbd[186] = $("#tut_2_10");	
+	
+	kbd[66] = $("#kbd_b");
 	
 	for (i = 0; i < kbd.length; i++) { 
 		if(kbd[i]) {
@@ -105,7 +117,7 @@ $(document).ready(function(){
 			
 			for (i = 0; i < c.length; i++) { 
 				k = c[i];
-				document.title = c[i];
+				//document.title = c[i];
 				if(typeof k !== "undefined" && k.hasClass('down')) {
 					break;
 				}

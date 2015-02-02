@@ -25,13 +25,19 @@ function keyboardLayout()
 				[3,0,0,0,0,0,0,0,0,0,0,4],
 				[5,7,7,8,7,7,7,5]];
  
+	var colors =[[1,1,2,2,3,4,4,5,5,6,7,8,8,0],
+				[0,1,2,3,4,4,5,5,6,7,8,8,8,0],
+				[0,1,2,3,4,4,5,5,6,7,8,8,0],
+				[0,1,2,3,4,4,5,5,6,7,8,0],
+				[0,0,0,9,0,0,0,0]];
+ 
 	text = '';
 	for (i = 0; i < lay.length; i++) { 
 		row ='';
 		for (j = 0; j < lay[i].length; j++) { 
 			row += buildHTML('div', '<span>A</span>', {
 				id : "tut_" + i + "_" + j,
-				class : 'key ' + clases[ lay[i][j] ]
+				class : 'key ' + 'color'+colors[i][j] +' ' + clases[ lay[i][j] ]
 			});
 		}
  
