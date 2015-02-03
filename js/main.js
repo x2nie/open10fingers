@@ -159,7 +159,7 @@ function loadLesson(num) {
 			//document.title = 'i,j:'+ii +'~' +jj
 			document.title = curData;
 			var newColor = getColorIndex(ij);
-			$hands.removeClass('finger '+lastColor).addClass('finger'+newColor);
+			$hands.attr('class', 'finger'+newColor);
 			
 			cur.removeClass('current '+lastColor).next().addClass('current '+newColor);
 			lastColor = newColor;
