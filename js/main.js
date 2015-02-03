@@ -164,7 +164,7 @@ function loadLesson(num) {
 			}*/
 			var ij = getKeyPos(curData);
 			//document.title = 'i,j:'+ii +'~' +jj
-			document.title = curData;
+			//document.title = curData;
 			var newColor = getColorIndex(ij);
 			$hands.attr('class', 'finger'+newColor);
 			
