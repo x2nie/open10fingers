@@ -23,9 +23,11 @@ var dict = {
 	}
 };
 
+var lessonsData =  ["asdfjkl", "gh", "ei", "ru", "mv", "nb", "c,t", "yo", "w.", "px", "qz" ];
 var lessons = {
 	//data: ["asdfjkl;", "et", "on", "as", "id", "pg", ".c", ",r", ";l", "yf", "km", "jw", "qv", "'z", "xb"],
-	data: ["asdfjkl", "g", "h"],
+	//data: ["asdfjkl", "gha", "ei", "ru", "mv", "nb", "c,t", "yo", "w.", "px", "qz" ],
+	data: lessonsData,
 
 	// Examples: load(0.5); load(14); load(1);
 	load: function(num) {
@@ -86,8 +88,11 @@ function removeFingerTip(ij) {
 	$('#tut_' + ij[0] + '_' + ij[1]).removeClass('noticed');
 }	
 
+var lessonId = 0;
+
 function loadLesson(num) {
 	
+	lessonId = num;
 	var lesson = lessons.load(num);
 	$('#stats-title').text(lesson.title);
 	$('#stats-errors').text('');

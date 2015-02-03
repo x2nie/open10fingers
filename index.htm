@@ -161,7 +161,7 @@ $(document).ready(function(){
 	
 	$("body").keyup(function(){ 
     //alert("keyup event occured! The Ascii value of pressed key is: " + event.keyCode);
-	//document.title = event.keyCode;
+		//document.title = 'Lesson:'+lessonId;
 		$('#last-keyPressed').html('{up} '+event.keyCode +' ~ '+ event.location );
 	
 		var c = k = kbd[event.keyCode];
@@ -192,6 +192,16 @@ $(document).ready(function(){
 	});
 	
 	$("body").keydown(function(){ 
+		
+		if(event.keyCode == 33 && lessonId > 0)
+		{
+			loadLesson(lessonId - 0.5);
+		}
+		if(event.keyCode == 34 && lessonId < lessonsData.length)
+		{
+			loadLesson(lessonId + 0.5);
+		}
+		
 		//event.preventDefault();
 		$('#last-keyPressed').html('{down} '+event.keyCode +' ~ '+ event.location );
 	//kbd[16] = $("#kbd_tilde0");
