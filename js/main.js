@@ -59,6 +59,24 @@ var lessons = {
 		};
 	}
 };
+function getKeyPos(key) {
+	//var curData = cur.next().html();
+	//document.title = curData;	
+	for (i = 0; i < key_color.length; i++) { 
+		for (j = 0; j < key_color[i].length; j++) {
+			if (key_color[i][j] == key){
+				
+				//document.title += newColor+ ' i:'+i+' j:'+j;
+				return [i,j];
+			}
+		}
+	}
+	return null;
+}
+
+function getColorIndex(ij) {
+	return colors[ ij[0] ][ ij[1] ];
+}
 
 function loadLesson(num) {
 	
@@ -80,11 +98,19 @@ function loadLesson(num) {
 		$("<span>").text(ch).appendTo(el);
 	});
 	el.children(':first-child').addClass('current');
-
+	var ij = getKeyPos(el.children(':first-child').html());
+	var ii = ij[0];
+	var jj = ij[1];
+	document.title = 'i,j:'+ii +'~' +jj
+	var lastColor = getColorIndex(ij);
+	var $hands = $('#hands');
+	$hands.addClass('finger'+lastColor);
+	//document.title += ' #'+lastColor;
+	
 	var prevts = 0;
 	var total = 0;
 	var errors = 0;
-	var lastColor = '0';
+	//var lastColor = '0';
 	$('body').off('keypress.dtt');
 	$('body').on('keypress.dtt', function (ev) {
 			$('#last-charPressed').html(ev.which || ev.keyCode);
@@ -119,7 +145,7 @@ function loadLesson(num) {
 			//cur.removeClass('current').next().addClass('current');
 			var curData = cur.next().html();
 			//document.title = curData;
-			var newColor = '0';
+			/*var newColor = '0';
 			for (i = 0; i < key_color.length; i++) { 
 				for (j = 0; j < key_color[i].length; j++) {
 					if (key_color[i][j] == curData){
@@ -128,7 +154,11 @@ function loadLesson(num) {
 						break;
 					}
 				}
-			}
+			}*/
+			var ij = getKeyPos(curData);
+			//document.title = 'i,j:'+ii +'~' +jj
+			var newColor = getColorIndex(ij);
+			$hands.removeClass('finger '+lastColor).addClass('finger'+newColor);
 			
 			cur.removeClass('current '+lastColor).next().addClass('current '+newColor);
 			lastColor = newColor;

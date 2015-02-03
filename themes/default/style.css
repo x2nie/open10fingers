@@ -107,7 +107,7 @@
 	width:25px;
 	height:25px;
 	border-radius:16px;
-	background-color:#745EC5;
+	/*background-color:#745EC5;*/
 	position:absolute;
 	margin: 64px 0 0 4px;
 	opacity:0.7;
@@ -127,6 +127,11 @@
 .finger3  #fingers:before {	
 	background-color:#745EC5;
 	margin: 5px 0 0 66px;
+	}
+
+.finger4  #fingers:before {	
+	background-color:#745EC5;
+	margin: 18px 0 0 111px;
 	}
 
 
