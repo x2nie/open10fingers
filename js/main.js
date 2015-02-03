@@ -101,7 +101,7 @@ function loadLesson(num) {
 	var ij = getKeyPos(el.children(':first-child').html());
 	var ii = ij[0];
 	var jj = ij[1];
-	document.title = 'i,j:'+ii +'~' +jj
+	//document.title = 'i,j:'+ii +'~' +jj
 	var lastColor = getColorIndex(ij);
 	var $hands = $('#hands');
 	$hands.addClass('finger'+lastColor);
@@ -157,6 +157,7 @@ function loadLesson(num) {
 			}*/
 			var ij = getKeyPos(curData);
 			//document.title = 'i,j:'+ii +'~' +jj
+			document.title = curData;
 			var newColor = getColorIndex(ij);
 			$hands.removeClass('finger '+lastColor).addClass('finger'+newColor);
 			
