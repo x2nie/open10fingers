@@ -23,7 +23,10 @@ var dict = {
 	}
 };
 
-var lessonsData =  ["asdfjkl", "gh", "ei", "ru", "mv", "nb", "c,t", "yo", "w.", "px", "qz" ];
+var lessonsData =  [
+	"asdfjkl", "gh", "ei", "ru", "mv", "nb", "c,t", "yo", "w.", "px", "qz",
+	"AS","JK","DF",'L'
+	];
 var lessons = {
 	//data: ["asdfjkl;", "et", "on", "as", "id", "pg", ".c", ",r", ";l", "yf", "km", "jw", "qv", "'z", "xb"],
 	//data: ["asdfjkl", "gha", "ei", "ru", "mv", "nb", "c,t", "yo", "w.", "px", "qz" ],
@@ -52,7 +55,7 @@ var lessons = {
 		});
 
 		var name = lessons.data[index];
-		var title = num + ': ' + name;
+		var title = '<span>'+ num + '</span>|' + name;
 		return {
 			letters: cumulative,
 			punctuation: punctuation,
@@ -85,16 +88,18 @@ function addFingerTip(ij) {
 }	
 
 function removeFingerTip(ij) {
-	$('#tut_' + ij[0] + '_' + ij[1]).removeClass('noticed');
+	if (ij) 
+		$('#tut_' + ij[0] + '_' + ij[1]).removeClass('noticed');
 }	
 
 var lessonId = 0;
+var lastIj = null;
 
 function loadLesson(num) {
 	
 	lessonId = num;
 	var lesson = lessons.load(num);
-	$('#stats-title').text(lesson.title);
+	$('#stats-title').html(lesson.title);
 	$('#stats-errors').text('');
 	console.log(lesson);
 
@@ -111,7 +116,8 @@ function loadLesson(num) {
 		$("<span>").text(ch).appendTo(el);
 	});
 	el.children(':first-child').addClass('current');
-	var lastIj = getKeyPos(el.children(':first-child').html());
+	removeFingerTip(lastIj);
+	lastIj = getKeyPos(el.children(':first-child').html());
 	//document.title = 'i,j:'+ii +'~' +jj
 	var lastColor = getColorIndex(lastIj);
 	var $hands = $('#hands');
@@ -149,7 +155,7 @@ function loadLesson(num) {
 		if (cur.next().length == 0) {
 			var avg = total / (sentence.length / 5);
 			var wpm = 60000 / avg;
-			$('#stats-speed').text(wpm.toFixed(0) + ' wpm');
+			$('#stats-speed').html('<span>&#9654;</span>'+ wpm.toFixed(0) + ' <span>wpm</span>');
 			console.log(total, avg, errors);
 			if (wpm < 30 || errors / sentence.length > 0.05) return loadLesson(num);
 			else return loadLesson(num + 0.5);
@@ -177,7 +183,7 @@ function loadLesson(num) {
 			addFingerTip(ij);
 			lastIj = ij;
 			
-			cur.removeClass('current '+lastColor).next().addClass('current '+newColor);
+			cur.removeClass('current '+lastColor).addClass('done').next().addClass('current '+newColor);
 			lastColor = newColor;
 		}
 	});

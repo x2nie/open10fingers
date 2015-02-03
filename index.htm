@@ -8,14 +8,20 @@
     <link rel="icon" type="image/ico" href="img/favicon.ico"/>
 <style type="text/css">
 	body {text-align: center;}
-	h9 {color:#bbb;}
+	h1,h2,h9 {color:#bbb;}
+	h2 {
+		display:block;
+		/*position: absolute;*/
+		margin-top:-1.2em;		
+		font-size:52px;
+		color:#ccc;
+	}
+	h2 span { font-size:70%;}
 	#cover0 {width:100%; height:100%; position: static;}
 	svg path.down {background-color:red; fill:#f6f;} 
 	
 	#keyboard-layout div {display: inline; border:1px solid gray;}
-	 #kbd_tilde {
-            //fill: yellow;
-        }
+
 	#custom_kbd {margin-left:40px; display:none;  text-align:center;}
 	#hands {
 		text-align:center; 
@@ -44,14 +50,16 @@
  
 <body>
  <ul id="stats">
-		<li id="stats-speed">... wpm</li>
-		<li id="stats-title">loading...</li>
+		<!-- li id="stats-speed">... wpm</li -->
+		<!--li id="stats-title">loading...</li-->
 		<li id="stats-errors">0</li>
 	</ul>
 	
 	<div id="custom_kbd"></div>
 	
 	<div id="wrapper">
+		<h2 id="stats-title">loading...</h2>
+		<h2 id="stats-speed">... <span>wpm</span></h2>
 		<div id="current-lesson"></div>
 	</div>
 <!--script src="js/jquery0.js"></script-->  	

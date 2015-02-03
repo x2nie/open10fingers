@@ -1,12 +1,15 @@
 .keyboard-frame {
 	padding: 28px 10px;
-	background-color: #666;
-	border-radius: 10px;
+	
 	display:inline-block; 
 	
 	/* white 
 	background:-webkit-linear-gradient(top,#eee 0%, #ddd 90%, #99A 101%); */
+	/* black
+	background-color: #666;
 	background:-webkit-linear-gradient(top,#444 0%, #555 90%, #333 101%);
+	*/
+	
 	/*background: linear-gradient(bottom, #333 0%, #777 100%);
 	background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
@@ -20,7 +23,10 @@
 	color-stop(0.1, #666),	
 	color-stop(1, #777)
 	);*/
+	
+	/*border-radius: 10px;
 	box-shadow: inset 0px 0px 1px #999, 0px 2px 0px 0px #222, 0px 3px 3px #222;	
+	*/
 
 	}
 .row {display:block; 
@@ -49,7 +55,7 @@
 	line-height:20px;
 	}	
 	
-/** states **/	
+/** key states **/	
 .down , div.key.down {
 	/*background-color:#EEE;*/
 	opacity:0.95;

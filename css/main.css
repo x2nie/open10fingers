@@ -48,6 +48,9 @@ body {
 .current.failed {
 	background-color: #f00;
 }
+.done {
+	color : silver;
+}
 
 #wrapper {
 	margin-top: 1em;
@@ -79,18 +82,20 @@ body {
 }
 
 #stats-speed {
-	width: 20%;
+	float:right;
 }
 
-#stats-title {
-	width: 60%;
+#stats-title {	
 	text-align: center;
+	display:block;
+	float:left;
 }
 
 #stats-errors {
 	color: #fbb;
 	width: 20%;
 	text-align: right;
+	float:right;
 }
 
 body {
