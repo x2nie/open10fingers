@@ -1,14 +1,48 @@
 body {
-	background-color: #555;
-	color: #ccc;
+	
+	color: #333;
 }
 .current {
 	background-color: #cc0;
 	color: #000;
 }
 
+.current:beforee{
+	content:"&copy;";
+	/*width:40px;
+	height:40px;
+	position:relative;
+	top:2el;
+	left:0px;	
+	/*margin:auto;		*/
+	display:inline;
+	-webkit-animation:750ms arrow infinite ease;
+	animation:750ms arrow infinite ease;
+}
+@-webkit-keyframes arrow,
+@keyframes arrow {
+	0%,100% {
+		border: 17px solid black;
+		color: black;
+	}
+	50% {
+		border: 17px solid white;
+		color: white;
+	}
+}
+/*@keyframes arrow {
+	0%,100% {
+		color:black;
+	}
+	50% {
+		color:white;
+	}
+}*/
+
+
 .failed {
-	background-color: #d00;
+	/*background-color: #d00;*/
+	border-bottom: 7px solid #900;
 }
 
 .current.failed {
@@ -16,9 +50,18 @@ body {
 }
 
 #wrapper {
-	margin-top: 5em;
+	margin-top: 1em;
 	text-align: center;
 	font-size: 36;
+	background-color: #F1F1F1;
+	padding: 10px;
+}
+#current-lesson {
+	display: inline-block;
+	background-color: white;
+	border: 1px solid #ccc;
+	padding: 5px 30px;
+	box-shadow: inset 1px 1px 3px #ddd;
 }
 
 #stats {

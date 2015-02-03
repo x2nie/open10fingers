@@ -25,7 +25,7 @@ var dict = {
 
 var lessons = {
 	//data: ["asdfjkl;", "et", "on", "as", "id", "pg", ".c", ",r", ";l", "yf", "km", "jw", "qv", "'z", "xb"],
-	data: ["asdfjkl"],
+	data: ["asdfjkl", "g", "h"],
 
 	// Examples: load(0.5); load(14); load(1);
 	load: function(num) {
@@ -84,9 +84,10 @@ function loadLesson(num) {
 	var prevts = 0;
 	var total = 0;
 	var errors = 0;
+	var lastColor = '0';
 	$('body').off('keypress.dtt');
-	document.title = 'loaded5';
 	$('body').on('keypress.dtt', function (ev) {
+			$('#last-charPressed').html(ev.which || ev.keyCode);
 		if (prevts == 0) prevts = new Date();
 
 		var typed = String.fromCharCode(ev.which == charCodes.space ? charCodes.nbsp : ev.which);
@@ -115,10 +116,25 @@ function loadLesson(num) {
 			if (wpm < 30 || errors / sentence.length > 0.05) return loadLesson(num);
 			else return loadLesson(num + 0.5);
 		} else {
-			cur.removeClass('current').next().addClass('current');
+			//cur.removeClass('current').next().addClass('current');
+			var curData = cur.next().html();
+			//document.title = curData;
+			var newColor = '0';
+			for (i = 0; i < key_color.length; i++) { 
+				for (j = 0; j < key_color[i].length; j++) {
+					if (key_color[i][j] == curData){
+						newColor = 'color' + colors[i][j];
+						//document.title += newColor+ ' i:'+i+' j:'+j;
+						break;
+					}
+				}
+			}
+			
+			cur.removeClass('current '+lastColor).next().addClass('current '+newColor);
+			lastColor = newColor;
 		}
 	});
-	document.title = 'loaded456';
+	
 }
 /*
 $(document).ready(function() {
