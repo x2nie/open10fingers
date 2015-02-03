@@ -5,6 +5,7 @@
     <meta name="keywords" content="keywords here">
     <link rel="icon" type="image/ico" href="img/favicon.ico">
 <style type="text/css">
+	body {text-align: center;}
 	#cover0 {width:100%; height:100%; position: static;}
 	svg path.down {background-color:red; fill:#f6f;} 
 	
@@ -13,7 +14,7 @@
             //fill: yellow;
         }
 	#custom_kbd {margin-left:40px; display:none;  text-align:center;}
-	#hand {
+	#handss {
 		text-align:center; 
 		position: absolute;
 		bottom:0;
@@ -32,7 +33,8 @@
 <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
 
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
- 
+	<link  href="themes/default/style.css" rel="stylesheet" type="text/css"/>
+
 
  
 </head>
@@ -69,7 +71,11 @@
 
 
 
-<div id="hand"><img src="img/tangan.png"  /></div>
+<div id="hands" class="finger3">
+	<div id="fingers">
+	<img src="img/tangan.png"/>
+	</div>
+</div>
 
 	<!--h1>المسهث هخصاللأ خصاض <font class="color1">ل&#x200d;</font><span class="color2">ب&#x200d;</span><span class="color3">ي&#x200d;</span><span class="color4">س&#x200d;</span><span class="color5">ش</span></h1-->
 <h9>focus: <span id="current-focus"></span> | Last Char: <span id="last-charPressed"></span> | Key: <span id="last-keyPressed"></span></h9>
@@ -81,7 +87,6 @@
 
 
 <script src="themes/default/layout-builder.js"></script> 
-<link  href="themes/default/style.css" rel="stylesheet" type="text/css"/>
 
 <script>
 var key_color = []; 
