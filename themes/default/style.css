@@ -3,9 +3,11 @@
 	background-color: #666;
 	border-radius: 10px;
 	display:inline-block; 
-	background:-webkit-linear-gradient(top,#777 0%, #666 90%, #333 100%);
-	/*background:linear-gradient(top,#5D85A3 50%, #162B3B 50%, #388FD3 100%);
-	background: linear-gradient(bottom, #333 0%, #777 100%);
+	
+	/* white 
+	background:-webkit-linear-gradient(top,#eee 0%, #ddd 90%, #99A 101%); */
+	background:-webkit-linear-gradient(top,#444 0%, #555 90%, #333 101%);
+	/*background: linear-gradient(bottom, #333 0%, #777 100%);
 	background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
 	background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
@@ -37,9 +39,10 @@
 	font-family: arial, helvetica;
 	font-size:12px;
 	overflow: hidden;
-	opacity:0.2;
+	opacity:0.1;
 	border:1px solid #444;
 	}
+	
 .key span {
 	padding:10px 7px;
 	margin:0; 
@@ -55,16 +58,21 @@
 	margin-bottom:-3px;
 	}
 .allowed {	  
-	opacity:1;
+	opacity:0.3;
 	background-color: #AAA;
 	border: 1px solid transparent;
 	color:#222;
-	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	/*-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
 	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-	box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #555, 2px 5px 5px #222;	
-	
+	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;*/
+	box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #555, 2px 5px 5px #222;		
 	}
+.noticed{
+	opacity:1;
+}	
+
+
+/* keys length */
 .tab { width:52px;}
 .capslock { width:67px;}
 .shift-left { width:85px;}
@@ -77,27 +85,6 @@
 .space { width:220px;}
 .vbar { width:65px;}
 
-/** colors **/
-.color1{ background-color:#FFCD00;}
-.color2{ background-color:#E67E21;}
-.color3{ background-color:#E74C3C;}
-.color4{ background-color:#F57CC3;}
-
-
-.color5{ background-color:#69D2E7;}
-.color6{ background-color:#3498DB;}
-.color7{ background-color:#2ECC71;}
-.color8{ background-color:#A5C63A;}
-.colora{ background-color:#B8C9F1;}
-
-.color9{ background-color:#F1DEB4;}
-/*
-.color1.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #FFA800, 2px 5px 5px #222;	}
-.color2.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #D35400, 2px 5px 5px #222;	}
-.color3.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #C0382A, 2px 5px 5px #222;	}
-.color4.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #D45C9E, 2px 5px 5px #222;	}
-*/
-.color9.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #8E725E, 2px 5px 5px #222;	}
 
 /* HAND = FINGERS POSITION */
 #fingers{position:relative; display:inline-block;}
@@ -159,6 +146,43 @@
 
 
 
+/** colors **/
+.finger1  #fingers:before,
+.color1{ background-color:#FFCD00;}
+
+.finger2  #fingers:before,
+.color2{ background-color:#E67E21;}
+
+.finger3  #fingers:before,
+.color3{ background-color:#E74C3C;}
+
+.finger4  #fingers:before,
+.color4{ background-color:#F57CC3;}
+
+
+
+.finger5  #fingers:before,
+.color5{ background-color:#69D2E7;}
+
+.finger6  #fingers:before,
+.color6{ background-color:#3498DB;}
+
+.finger7  #fingers:before,
+.color7{ background-color:#2ECC71;}
+
+.finger8  #fingers:before,
+.color8{ background-color:#A5C63A;}
+.colora{ background-color:#B8C9F1;}
+
+.finger9  #fingers:before,
+.color9{ background-color:#A38671;}
+/*
+.color1.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #FFA800, 2px 5px 5px #222;	}
+.color2.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #D35400, 2px 5px 5px #222;	}
+.color3.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #C0382A, 2px 5px 5px #222;	}
+.color4.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #D45C9E, 2px 5px 5px #222;	}
+*/
+.color9.allowed{ box-shadow: inset 0px 1px 0px #ddd, 1px 3px 0px 0px #8E725E, 2px 5px 5px #222;	}
 
 
 

@@ -78,6 +78,14 @@ function getColorIndex(ij) {
 	return colors[ ij[0] ][ ij[1] ];
 }
 
+function addFingerTip(ij) {
+	$('#tut_' + ij[0] + '_' + ij[1]).addClass('noticed');
+}	
+
+function removeFingerTip(ij) {
+	$('#tut_' + ij[0] + '_' + ij[1]).removeClass('noticed');
+}	
+
 function loadLesson(num) {
 	
 	var lesson = lessons.load(num);
@@ -98,14 +106,13 @@ function loadLesson(num) {
 		$("<span>").text(ch).appendTo(el);
 	});
 	el.children(':first-child').addClass('current');
-	var ij = getKeyPos(el.children(':first-child').html());
-	var ii = ij[0];
-	var jj = ij[1];
+	var lastIj = getKeyPos(el.children(':first-child').html());
 	//document.title = 'i,j:'+ii +'~' +jj
-	var lastColor = getColorIndex(ij);
+	var lastColor = getColorIndex(lastIj);
 	var $hands = $('#hands');
 	$hands.addClass('finger'+lastColor);
-	//document.title += ' #'+lastColor;
+	//document.title += ' #'+lastColor
+	addFingerTip(lastIj);
 	
 	var prevts = 0;
 	var total = 0;
@@ -160,6 +167,10 @@ function loadLesson(num) {
 			document.title = curData;
 			var newColor = getColorIndex(ij);
 			$hands.attr('class', 'finger'+newColor);
+			
+			removeFingerTip(lastIj);
+			addFingerTip(ij);
+			lastIj = ij;
 			
 			cur.removeClass('current '+lastColor).next().addClass('current '+newColor);
 			lastColor = newColor;
