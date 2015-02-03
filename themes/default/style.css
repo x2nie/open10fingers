@@ -118,21 +118,44 @@
 	background-color:#745EC5;
 	margin: 64px 0 0 4px;
 	}
-
 .finger2  #fingers:before {	
 	background-color:#745EC5;
 	margin: 22px 0 0 42px;
 	}
-
 .finger3  #fingers:before {	
 	background-color:#745EC5;
 	margin: 5px 0 0 66px;
 	}
-
 .finger4  #fingers:before {	
 	background-color:#745EC5;
 	margin: 18px 0 0 111px;
 	}
+
+	
+	
+.finger5  #fingers:before {	
+	background-color:#745EC5;
+	margin: 18px 0 0 282px;
+	}
+.finger6  #fingers:before {	
+	background-color:#745EC5;
+	margin: 5px 0 0 325px;
+	}
+.finger7  #fingers:before {	
+	background-color:#745EC5;
+	margin: 22px 0 0 351px;
+	}
+.finger8  #fingers:before {	
+	background-color:#745EC5;
+	margin: 64px 0 0 389px;
+	}
+
+.finger9  #fingers:before {	
+	background-color:#745EC5;
+	margin: 100px 0 0 218px;
+	}
+
+
 
 
 
