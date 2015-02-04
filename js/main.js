@@ -121,7 +121,8 @@ function loadLesson(num) {
 	//document.title = 'i,j:'+ii +'~' +jj
 	var lastColor = getColorIndex(lastIj);
 	var $hands = $('#hands');
-	$hands.addClass('finger'+lastColor);
+	//$hands.addClass('finger'+lastColor);
+	$hands.attr('class', 'finger'+lastColor);
 	//document.title += ' #'+lastColor
 	addFingerTip(lastIj);
 	
