@@ -1,0 +1,10 @@
+<p>Focus the IFrame first (e.g. by clicking in it), then try pressing some keys.</p>
+<p id="log"></p>
+
+<script>
+    document.addEventListener('keydown', logKey);
+
+    function logKey(e) {
+        log.textContent += ` ${e.code}`;
+    }
+</script>
